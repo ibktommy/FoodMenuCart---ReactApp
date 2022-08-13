@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './MealsList.module.css'
 import mealsData from '../MealsData'
 import Card from '../../UI/Card/Card'
+import MealItem from '../MealItem/MealItem'
 
 const MealsList = () => {
   return (
@@ -10,8 +11,11 @@ const MealsList = () => {
         <ul>
           {
             mealsData.map((meal) => {
+              // Destruction Object Values From the MealData
+              const { id, name, description, price } = meal
+
               return (
-                <h1>{meal.name}</h1>
+                <MealItem key={id} name={name} description={description} price={price} />
               )
             })
           }
