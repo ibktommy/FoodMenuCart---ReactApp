@@ -1,7 +1,10 @@
+import React from 'react'
+import Header from './components/Layout/Header';
+
 function App() {
   return (
     <>
-      <h1>Food Menu Cart - React App</h1>
+      <Header />
     </>
   );
 }
