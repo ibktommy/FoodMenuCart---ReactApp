@@ -11,7 +11,7 @@ const MealsList = () => {
         <ul>
           {
             mealsData.map((meal) => {
-              // Destruction Object Values From the MealData
+              // Destructuring Object Values From the MealData
               const { id, name, description, price } = meal
 
               return (
