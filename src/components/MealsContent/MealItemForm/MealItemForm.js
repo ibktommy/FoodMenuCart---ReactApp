@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import Input from '../../UI/Input/Input'
 import classes from './MealItemForm.module.css'
 
-const MealItemForm = () => {
+const MealItemForm = (props) => {
   // Setting State to Check if Input Value is Valid
   const [amountIsValid, setAmountIsValid] = useState(true)
   // Setting useRef Hook
@@ -22,6 +22,8 @@ const MealItemForm = () => {
       setAmountIsValid(false)
       return
     }
+
+    props.onAddToCart(enteredAmountNum)
   }
 
   return (

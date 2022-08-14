@@ -3,6 +3,8 @@ import MealItemForm from '../MealItemForm/MealItemForm'
 import classes from './MealItem.module.css'
 
 const MealItem = ({ name, price, description }) => {
+  // Add To Cart Function Passed as Props to MealItemForm
+  const addToCartHandler = amount => {}
   return (
     <li className={classes.meal}>
       <div>
@@ -11,7 +13,7 @@ const MealItem = ({ name, price, description }) => {
         <p className={classes.price}>{`$${price.toFixed(2)}`}</p>
       </div>
       <div>
-        <MealItemForm />
+        <MealItemForm onAddToCart={addToCartHandler}/>
       </div>
     </li>
   )
