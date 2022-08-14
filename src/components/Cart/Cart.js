@@ -1,4 +1,5 @@
 import React from 'react'
+import Modal from '../UI/Modal/Modal'
 import classes from './Cart.module.css'
 
 const Cart = () => {
@@ -14,7 +15,7 @@ const Cart = () => {
 
 
   return (
-    <>
+    <Modal>
       <ul className={classes['cart-items']}>
         {
           dummyCartData.map((cartItem) => {
@@ -36,7 +37,8 @@ const Cart = () => {
         <button className={classes['button--alt']}>Close</button>
         <button className={classes.button}>Order</button>
       </div>
-    </>
+
+    </Modal>
   )
 }
 
