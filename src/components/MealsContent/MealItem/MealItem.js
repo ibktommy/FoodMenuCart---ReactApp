@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CartContext from '../../../contextStore/cart-context'
 import MealItemForm from '../MealItemForm/MealItemForm'
 import classes from './MealItem.module.css'
 
-const MealItem = ({ name, price, description }) => {
+const MealItem = ({ id, name, price, description }) => {
+  // Using Cart Context
+  const cartContext = useContext(CartContext)
+
   // Add To Cart Function Passed as Props to MealItemForm
-  const addToCartHandler = amount => {}
+  const addToCartHandler = amount => {
+    cartContext.addItemToCart({
+      id: id,
+      name: name,
+      amount: amount,
+      price: price
+    })
+  }
+
+
   return (
     <li className={classes.meal}>
       <div>

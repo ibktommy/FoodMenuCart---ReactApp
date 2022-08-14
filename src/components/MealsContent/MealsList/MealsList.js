@@ -15,7 +15,7 @@ const MealsList = () => {
               const { id, name, description, price } = meal
 
               return (
-                <MealItem key={id} name={name} description={description} price={price} />
+                <MealItem key={id} name={name} description={description} price={price} id={id}/>
               )
             })
           }
