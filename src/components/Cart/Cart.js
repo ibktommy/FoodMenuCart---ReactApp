@@ -2,7 +2,7 @@ import React from 'react'
 import Modal from '../UI/Modal/Modal'
 import classes from './Cart.module.css'
 
-const Cart = () => {
+const Cart = (props) => {
   // Setting Dummy Data for Cart
   const dummyCartData = [
     {
@@ -34,7 +34,7 @@ const Cart = () => {
       </div>
 
       <div className={classes.actions}>
-        <button className={classes['button--alt']}>Close</button>
+        <button className={classes['button--alt']} onClick={props.closeCart}>Close</button>
         <button className={classes.button}>Order</button>
       </div>
 
