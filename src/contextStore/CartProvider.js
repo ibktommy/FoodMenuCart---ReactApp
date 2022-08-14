@@ -3,8 +3,8 @@ import CartContext from './cart-context'
 
 const CartProvider = ({ children }) => {
   // Create Functions that will be added to the Context Values
-  const addItemToCartHandler = (item) => {}
-  const removeItemFromCartHandler = () => {}
+  const addItemToCartHandler = (item) => { }
+  const removeItemFromCartHandler = (id) => { }
 
 
   // Creating the Context Value Object
