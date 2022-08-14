@@ -26,9 +26,6 @@ const CartProvider = ({ children }) => {
   // Set useReducer 
   const [cartState, dispatchCartFunc] = useReducer(cartReducerFunc, defaultCartState)
 
-
-
-
   // Create Functions that will be added to the Context Values
   const addItemToCartHandler = (item) => {
     dispatchCartFunc({ type: 'ADD', item: item })
