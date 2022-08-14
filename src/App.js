@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Cart from './components/Cart/Cart';
 import Header from './components/Layout/Header/Header';
 import MealsContent from './components/MealsContent/MealsContent';
+import CartProvider from './contextStore/CartProvider';
 
 function App() {
   // Setting APp State
@@ -16,13 +17,13 @@ function App() {
   }
 
   return (
-    <>
+    <CartProvider>
       {showCart && <Cart closeCart={hideCartHandler}/>}
       <Header openCart={showCartHandler}/>
       <main>
         <MealsContent />
       </main>
-    </>
+    </CartProvider>
   );
 }
 
