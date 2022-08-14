@@ -9,6 +9,8 @@ const Cart = (props) => {
 
   // Variable for the Total Amount from cart Context
   const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`
+  // Variable to check if there is items in the Cart Context
+  const checkCartItems = cartContext.items.length > 0
 
   return (
     <Modal closeCart={props.closeCart}>
@@ -31,7 +33,7 @@ const Cart = (props) => {
 
       <div className={classes.actions}>
         <button className={classes['button--alt']} onClick={props.closeCart}>Close</button>
-        <button className={classes.button}>Order</button>
+        {checkCartItems && <button className={classes.button}>Order</button>}
       </div>
 
     </Modal>
