@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import CartContext from '../../contextStore/cart-context'
 import Modal from '../UI/Modal/Modal'
 import classes from './Cart.module.css'
+import CartItem from './CartItem/CartItem'
 
 const Cart = (props) => {
   // Set Context
@@ -9,6 +10,7 @@ const Cart = (props) => {
 
   // Variable for the Total Amount from cart Context
   const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`
+
   // Variable to check if there is items in the Cart Context
   const checkCartItems = cartContext.items.length > 0
 
@@ -17,10 +19,9 @@ const Cart = (props) => {
       <ul className={classes['cart-items']}>
         {
           cartContext.items.map((cartItem) => {
+            const { name, id, amount, price } = cartItem
             return (
-              <li key={cartItem.id}>
-                {cartItem.name}
-              </li>
+              <CartItem key={id} name={name} amount={amount} price={price} />
             )
           })
         }
