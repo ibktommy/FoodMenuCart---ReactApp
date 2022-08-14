@@ -1,30 +1,34 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CartContext from '../../contextStore/cart-context'
 import Modal from '../UI/Modal/Modal'
 import classes from './Cart.module.css'
 
 const Cart = (props) => {
+  // Set Context
+  const cartContext = useContext(CartContext)
+
   // Setting Dummy Data for Cart
-  const dummyCartData = [
-    {
-      id: 'c1',
-      name: 'Sushi',
-      amount: 2,
-      price: 12.99,
-    },
-    {
-      id: 'c2',
-      name: 'Cake',
-      amount: 3,
-      price: 11.99,
-    }
-  ]
+  // const dummyCartData = [
+  //   {
+  //     id: 'c1',
+  //     name: 'Sushi',
+  //     amount: 2,
+  //     price: 12.99,
+  //   },
+  //   {
+  //     id: 'c2',
+  //     name: 'Cake',
+  //     amount: 3,
+  //     price: 11.99,
+  //   }
+  // ]
 
 
   return (
     <Modal closeCart={props.closeCart}>
       <ul className={classes['cart-items']}>
         {
-          dummyCartData.map((cartItem) => {
+          cartContext.items.map((cartItem) => {
             return (
               <li key={cartItem.id}>
                 {cartItem.name}
