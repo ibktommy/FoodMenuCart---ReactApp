@@ -15,7 +15,7 @@ const Cart = (props) => {
 
 
   return (
-    <Modal>
+    <Modal closeCart={props.closeCart}>
       <ul className={classes['cart-items']}>
         {
           dummyCartData.map((cartItem) => {
