@@ -7,22 +7,8 @@ const Cart = (props) => {
   // Set Context
   const cartContext = useContext(CartContext)
 
-  // Setting Dummy Data for Cart
-  // const dummyCartData = [
-  //   {
-  //     id: 'c1',
-  //     name: 'Sushi',
-  //     amount: 2,
-  //     price: 12.99,
-  //   },
-  //   {
-  //     id: 'c2',
-  //     name: 'Cake',
-  //     amount: 3,
-  //     price: 11.99,
-  //   }
-  // ]
-
+  // Variable for the Total Amount from cart Context
+  const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`
 
   return (
     <Modal closeCart={props.closeCart}>
@@ -40,7 +26,7 @@ const Cart = (props) => {
 
       <div className={classes.total}>
         <span>Total Amount</span>
-        <span>35.62</span>
+        <span>{totalAmount}</span>
       </div>
 
       <div className={classes.actions}>
