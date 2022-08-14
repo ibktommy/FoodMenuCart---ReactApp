@@ -10,6 +10,12 @@ const Cart = (props) => {
       name: 'Sushi',
       amount: 2,
       price: 12.99,
+    },
+    {
+      id: 'c2',
+      name: 'Cake',
+      amount: 3,
+      price: 11.99,
     }
   ]
 
