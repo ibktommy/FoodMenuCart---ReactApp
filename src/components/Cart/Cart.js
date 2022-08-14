@@ -14,6 +14,11 @@ const Cart = (props) => {
   // Variable to check if there is items in the Cart Context
   const checkCartItems = cartContext.items.length > 0
 
+  // Functions That Handle Button Actions in the cartItem components
+  const cartItemAddHandler = item => { }
+
+  const cartItemRemoveHandler = id => { }
+
   return (
     <Modal closeCart={props.closeCart}>
       <ul className={classes['cart-items']}>
@@ -21,7 +26,14 @@ const Cart = (props) => {
           cartContext.items.map((cartItem) => {
             const { name, id, amount, price } = cartItem
             return (
-              <CartItem key={id} name={name} amount={amount} price={price} />
+              <CartItem 
+                key={id} 
+                name={name} 
+                amount={amount} 
+                price={price} 
+                onAddItem={cartItemAddHandler.bind(null, cartItem)} 
+                onRemovecartItem={cartItemRemoveHandler.bind(null, cartItem.id)} 
+              />
             )
           })
         }

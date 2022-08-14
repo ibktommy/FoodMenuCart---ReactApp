@@ -5,7 +5,7 @@ const CartItem = (props) => {
   // Formating Price 
   const price = `$${props.price.toFixed(2)}`
   return (
-    <li>
+    <li className={classes['cart-item']}>
       <div>
         <h2>{props.name}</h2>
         <div className={classes.summary}>
@@ -14,8 +14,8 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={classes.actions}>
-        <button onClick={props.onRemove}>-</button>
-        <button onClick={props.onAdd}>+</button>
+        <button onClick={props.onRemoveItem}>-</button>
+        <button onClick={props.onAddItem}>+</button>
       </div>
     </li>
   )
