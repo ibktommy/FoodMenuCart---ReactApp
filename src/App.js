@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Cart from './components/Cart/Cart';
 import Header from './components/Layout/Header/Header';
 import MealsContent from './components/MealsContent/MealsContent';
+import CartContext from './contextStore/cart-context';
 import CartProvider from './contextStore/CartProvider';
 
 function App() {
