@@ -22,7 +22,9 @@ const Cart = (props) => {
     })
   }
 
-  const cartItemRemoveHandler = id => { }
+  const cartItemRemoveHandler = id => { 
+    cartContext.removeItemFromCart(id)
+   }
 
   return (
     <Modal closeCart={props.closeCart}>

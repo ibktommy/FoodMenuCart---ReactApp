@@ -13,13 +13,15 @@ const defaultCartState = {
 // CART PROVIDER COMPONENT
 const CartProvider = ({ children }) => {
   // Set useReducer 
-  const [cartState, dispatchCartFunc] = useReducer(cartReducerFunc, defaultCartState)
+  const [cartState, dispatchCartAction] = useReducer(cartReducerFunc, defaultCartState)
 
   // Create Functions that will be added to the Context Values
   const addItemToCartHandler = (item) => {
-    dispatchCartFunc({ type: 'ADD', item: item })
+    dispatchCartAction({ type: 'ADD', item: item })
   }
-  const removeItemFromCartHandler = (id) => { }
+  const removeItemFromCartHandler = (id) => { 
+    dispatchCartAction({ type: 'REMOVE', id: id })
+   }
 
 
   // Creating the Context Value Object
