@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react'
 import CartContext from './cart-context'
+// import { cartReducerFunc } from '../components/Cart/CartReducer/cartReducerFunc'
 
 // CART REDUCER
 // Set Default/Initial State
@@ -9,7 +10,7 @@ const defaultCartState = {
 }
 
 const cartReducerFunc = (state, action) => {
-  if (action.type === 'ADD') {
+  if (action.type === 'help') {
     const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amount
 
     const existingCartItemIndex = state.items.findIndex((item) => item.id === action.item.id)
@@ -26,12 +27,13 @@ const cartReducerFunc = (state, action) => {
     } else {
       updatedItems = state.items.concat(action.item)
     }
-    
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount
     }
   }
+
   return defaultCartState
 }
 

@@ -15,7 +15,12 @@ const Cart = (props) => {
   const checkCartItems = cartContext.items.length > 0
 
   // Functions That Handle Button Actions in the cartItem components
-  const cartItemAddHandler = item => { }
+  const cartItemAddHandler = item => {
+    cartContext.addItemToCart({
+      ...item,
+      amount: 1
+    })
+  }
 
   const cartItemRemoveHandler = id => { }
 
@@ -31,7 +36,7 @@ const Cart = (props) => {
                 name={name} 
                 amount={amount} 
                 price={price} 
-                onAddItem={cartItemAddHandler.bind(null, cartItem)} 
+                onAddCartItem={cartItemAddHandler.bind(null, cartItem)} 
                 onRemovecartItem={cartItemRemoveHandler.bind(null, cartItem.id)} 
               />
             )
